@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "HackAssembler": {
+      "commandName": "Project",
+      "commandLineArgs": ".\\Samples\\Pong.asm"
+    }
+  }
+}

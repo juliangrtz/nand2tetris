@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackAssembler", "HackAssembler.csproj", "{9043A62D-75AC-4B13-896A-4FE5712C52BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackAssembler.Tests", "..\CSharpHack.Tests\HackAssembler.Tests.csproj", "{7D4E00F3-9F8C-409F-97BF-B81B96FD64C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9043A62D-75AC-4B13-896A-4FE5712C52BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9043A62D-75AC-4B13-896A-4FE5712C52BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9043A62D-75AC-4B13-896A-4FE5712C52BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9043A62D-75AC-4B13-896A-4FE5712C52BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D4E00F3-9F8C-409F-97BF-B81B96FD64C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D4E00F3-9F8C-409F-97BF-B81B96FD64C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D4E00F3-9F8C-409F-97BF-B81B96FD64C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D4E00F3-9F8C-409F-97BF-B81B96FD64C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7EC90A87-A9DD-4F38-9E70-353957D239FF}
+	EndGlobalSection
+EndGlobal

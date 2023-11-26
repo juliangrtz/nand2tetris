@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="go build cmd/hack" type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <module name="GoAssembler" />
+    <working_directory value="$PROJECT_DIR$/out" />
+    <go_parameters value="-o $PROJECT_DIR$/out/hack" />
+    <parameters value="build ../resources/VMTest" />
+    <kind value="DIRECTORY" />
+    <package value="GoAssembler" />
+    <directory value="$PROJECT_DIR$/cmd/hack" />
+    <filePath value="$PROJECT_DIR$" />
+    <output_directory value="$PROJECT_DIR$/out" />
+    <method v="2" />
+  </configuration>
+</component>

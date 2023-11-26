@@ -1,0 +1,106 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/03/a/RAM64.hdl
+
+/**
+ * Memory of 64 registers, each 16 bit-wide. Out holds the value
+ * stored at the memory location specified by address. If load==1, then 
+ * the in value is loaded into the memory location specified by address 
+ * (the loaded value will be emitted to out from the next time step onward).
+ */
+
+CHIP RAM64 {
+    IN in[16], load, address[6];
+    OUT out[16];
+
+    PARTS:
+    DMux8Way(in=load, sel=address[3..5], a=dmuxOut0, b=dmuxOut1, c=dmuxOut2, d=dmuxOut3, e=dmuxOut4, f=dmuxOut5, g=dmuxOut6, h=dmuxOut7);
+
+    DMux8Way(in=dmuxOut0, sel=address[0..2], a=load0, b=load1, c=load2, d=load3, e=load4, f=load5, g=load6, h=load7);
+    DMux8Way(in=dmuxOut1, sel=address[0..2], a=load8, b=load9, c=load10, d=load11, e=load12, f=load13, g=load14, h=load15);
+    DMux8Way(in=dmuxOut2, sel=address[0..2], a=load16, b=load17, c=load18, d=load19, e=load20, f=load21, g=load22, h=load23);
+    DMux8Way(in=dmuxOut3, sel=address[0..2], a=load24, b=load25, c=load26, d=load27, e=load28, f=load29, g=load30, h=load31);
+    DMux8Way(in=dmuxOut4, sel=address[0..2], a=load32, b=load33, c=load34, d=load35, e=load36, f=load37, g=load38, h=load39);
+    DMux8Way(in=dmuxOut5, sel=address[0..2], a=load40, b=load41, c=load42, d=load43, e=load44, f=load45, g=load46, h=load47);
+    DMux8Way(in=dmuxOut6, sel=address[0..2], a=load48, b=load49, c=load50, d=load51, e=load52, f=load53, g=load54, h=load55);
+    DMux8Way(in=dmuxOut7, sel=address[0..2], a=load56, b=load57, c=load58, d=load59, e=load60, f=load61, g=load62, h=load63);
+
+    Register(in=in, load=load0, out=muxIn0); // 000
+    Register(in=in, load=load1, out=muxIn1); // 001
+    Register(in=in, load=load2, out=muxIn2); // 010
+    Register(in=in, load=load3, out=muxIn3); // 011
+    Register(in=in, load=load4, out=muxIn4); // 111
+    Register(in=in, load=load5, out=muxIn5); // 101
+    Register(in=in, load=load6, out=muxIn6); // 110
+    Register(in=in, load=load7, out=muxIn7); // 111
+
+    Register(in=in, load=load8, out=muxIn8); // 001
+    Register(in=in, load=load9, out=muxIn9);
+    Register(in=in, load=load10, out=muxIn10);
+    Register(in=in, load=load11, out=muxIn11);
+    Register(in=in, load=load12, out=muxIn12);
+    Register(in=in, load=load13, out=muxIn13);
+    Register(in=in, load=load14, out=muxIn14);
+    Register(in=in, load=load15, out=muxIn15);
+
+    Register(in=in, load=load16, out=muxIn16); // 010
+    Register(in=in, load=load17, out=muxIn17);
+    Register(in=in, load=load18, out=muxIn18);
+    Register(in=in, load=load19, out=muxIn19);
+    Register(in=in, load=load20, out=muxIn20);
+    Register(in=in, load=load21, out=muxIn21);
+    Register(in=in, load=load22, out=muxIn22);
+    Register(in=in, load=load23, out=muxIn23);
+    Register(in=in, load=load24, out=muxIn24);
+    Register(in=in, load=load25, out=muxIn25);
+    Register(in=in, load=load26, out=muxIn26);
+    Register(in=in, load=load27, out=muxIn27);
+    Register(in=in, load=load28, out=muxIn28);
+    Register(in=in, load=load29, out=muxIn29);
+    Register(in=in, load=load30, out=muxIn30);
+    Register(in=in, load=load31, out=muxIn31);
+    Register(in=in, load=load32, out=muxIn32);
+    Register(in=in, load=load33, out=muxIn33);
+    Register(in=in, load=load34, out=muxIn34);
+    Register(in=in, load=load35, out=muxIn35);
+    Register(in=in, load=load36, out=muxIn36);
+    Register(in=in, load=load37, out=muxIn37);
+    Register(in=in, load=load38, out=muxIn38);
+    Register(in=in, load=load39, out=muxIn39);
+    Register(in=in, load=load40, out=muxIn40);
+    Register(in=in, load=load41, out=muxIn41);
+    Register(in=in, load=load42, out=muxIn42);
+    Register(in=in, load=load43, out=muxIn43);
+    Register(in=in, load=load44, out=muxIn44);
+    Register(in=in, load=load45, out=muxIn45);
+    Register(in=in, load=load46, out=muxIn46);
+    Register(in=in, load=load47, out=muxIn47);
+    Register(in=in, load=load48, out=muxIn48);
+    Register(in=in, load=load49, out=muxIn49);
+    Register(in=in, load=load50, out=muxIn50);
+    Register(in=in, load=load51, out=muxIn51);
+    Register(in=in, load=load52, out=muxIn52);
+    Register(in=in, load=load53, out=muxIn53);
+    Register(in=in, load=load54, out=muxIn54);
+    Register(in=in, load=load55, out=muxIn55);
+    Register(in=in, load=load56, out=muxIn56);
+    Register(in=in, load=load57, out=muxIn57);
+    Register(in=in, load=load58, out=muxIn58);
+    Register(in=in, load=load59, out=muxIn59);
+    Register(in=in, load=load60, out=muxIn60);
+    Register(in=in, load=load61, out=muxIn61);
+    Register(in=in, load=load62, out=muxIn62);
+    Register(in=in, load=load63, out=muxIn63);
+
+    Mux8Way16(a=muxIn0, b=muxIn1, c=muxIn2, d=muxIn3, e=muxIn4, f=muxIn5, g=muxIn6, h=muxIn7, sel=address[0..2], out=muxOut0);
+    Mux8Way16(a=muxIn8, b=muxIn9, c=muxIn10, d=muxIn11, e=muxIn12, f=muxIn13, g=muxIn14, h=muxIn15, sel=address[0..2], out=muxOut1);
+    Mux8Way16(a=muxIn16, b=muxIn17, c=muxIn18, d=muxIn19, e=muxIn20, f=muxIn21, g=muxIn22, h=muxIn23, sel=address[0..2], out=muxOut2);
+    Mux8Way16(a=muxIn24, b=muxIn25, c=muxIn26, d=muxIn27, e=muxIn28, f=muxIn29, g=muxIn30, h=muxIn31, sel=address[0..2], out=muxOut3);
+    Mux8Way16(a=muxIn32, b=muxIn33, c=muxIn34, d=muxIn35, e=muxIn36, f=muxIn37, g=muxIn38, h=muxIn39, sel=address[0..2], out=muxOut4);
+    Mux8Way16(a=muxIn40, b=muxIn41, c=muxIn42, d=muxIn43, e=muxIn44, f=muxIn45, g=muxIn46, h=muxIn47, sel=address[0..2], out=muxOut5);
+    Mux8Way16(a=muxIn48, b=muxIn49, c=muxIn50, d=muxIn51, e=muxIn52, f=muxIn53, g=muxIn54, h=muxIn55, sel=address[0..2], out=muxOut6);
+    Mux8Way16(a=muxIn56, b=muxIn57, c=muxIn58, d=muxIn59, e=muxIn60, f=muxIn61, g=muxIn62, h=muxIn63, sel=address[0..2], out=muxOut7);
+
+    Mux8Way16(a=muxOut0, b=muxOut1, c=muxOut2, d=muxOut3, e=muxOut4, f=muxOut5, g=muxOut6, h=muxOut7, sel=address[3..5], out=out);
+}
